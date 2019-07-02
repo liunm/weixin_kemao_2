@@ -16,6 +16,8 @@ public class MessageReceiverController {
 			@RequestParam("timestamp") String timestamp,//
 			@RequestParam("nonce") String nonce,//
 			@RequestParam("echostr") String echostr,//
+			
+			
 	//
      )  {
 	return echostr;
