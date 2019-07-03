@@ -15,7 +15,7 @@ public class MessageReceiverController {
 			@RequestParam("signature") String signature,//
 			@RequestParam("timestamp") String timestamp,//
 			@RequestParam("nonce") String nonce,//
-			@RequestParam("echostr") String echostr,//
+			@RequestParam("echostr") String echostr//
 			
 			
 	//
@@ -23,3 +23,4 @@ public class MessageReceiverController {
 	return echostr;
 	}
 }
+
