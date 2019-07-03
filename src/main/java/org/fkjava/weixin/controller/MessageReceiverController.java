@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/kemao_2/message/receiver ")
+@RequestMapping("/kemao_2/message/receiver")
  
 public class MessageReceiverController {
 	@GetMapping
