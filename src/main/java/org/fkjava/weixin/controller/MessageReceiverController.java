@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/kemao_2/message/receiver ")
  
 public class MessageReceiverController {
-	
 	@GetMapping
 	public String echo(//
 			@RequestParam("signature") String signature,//
