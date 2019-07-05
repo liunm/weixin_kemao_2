@@ -1,5 +1,9 @@
 package org.fkjava.weixin.controller;
 
+import org.fkjava.weixin.domain.InMessage;
+import org.fkjava.weixin.domain.image.ImageInMessage;
+import org.fkjava.weixin.domain.text.TextInMessage;
+import org.fkjava.weixin.service.MessageConvertHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,10 +38,22 @@ public class MessageReceiverController {
 			@RequestParam("nonce") String nonce,//
 			@RequestBody String xml ) {
 		LOG.trace("收到的消息原文:\n{}\n----------------", xml);
-		return"";
 		
+		String type = xml.substring(xml.indexOf("<MsgType><![CDATA[") +18);
+		type = type.substring(0,type.indexOf("]"));
+//		if(type.equals("text")) {
+//			InMessage x = new TextInMessage();
+//		}else if(type.equals("image")) {
+//			InMessage x = new ImageInMessage();		}
+		
+		InMessage inMessage = MessageConvertHelper.convert(xml);
+		
+		
+		LOG.debug("转换后的消息对象\n{}\n", inMessage);
+		
+		
+		return"success";
 	}
-	
 	
 }
 
