@@ -12,4 +12,10 @@ public class ShortvideoInMessage extends InMessage{
 	
 	private static final long serialVersionUID = 1L;
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
